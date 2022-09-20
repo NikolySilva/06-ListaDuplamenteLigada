@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 
 // definicao de tipo
@@ -147,23 +147,47 @@ void inserirElemento()
 }
 
 
-// funções a serem implementadas no exericio
+// funï¿½ï¿½es a serem implementadas no exericio
 void exibirReverso()
 {
 	NO* elemento = ultimo;
-
+	while (elemento != NULL) {
+		cout << elemento->valor << endl;
+		elemento = elemento->ant;
+	}
 }
 
 void excluirPrimeiroElemento()
 {
-
+	NO* aux = primeiro;
+	aux->ant = NULL;
+	aux->valor = aux->prox->valor;
+	aux->prox = aux->prox->prox;
+	cout << "ExcluÃ­do com sucesso!\n\n\n";
 }
 
 void excluirUltimoElemento()
 {
+	NO* aux = primeiro;
+	NO* ultElem = ultimo;
+	if (aux != NULL) {
 
+		if (aux->prox == NULL) {
+			aux = NULL;
+			ultElem = NULL;
+		}
+		else {
+			while (aux->prox->prox != NULL)
+				aux = aux->prox;
+			aux->prox = NULL;
+			ultimo = aux;
+			free(aux->prox);
+			cout << "ExcluÃ­do";
+
+
+		}
+	}
 }
-
 
 
 
