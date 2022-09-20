@@ -150,6 +150,7 @@ void inserirElemento()
 // funções a serem implementadas no exericio
 void exibirReverso()
 {
+	NO* elemento = ultimo;
 
 }
 
